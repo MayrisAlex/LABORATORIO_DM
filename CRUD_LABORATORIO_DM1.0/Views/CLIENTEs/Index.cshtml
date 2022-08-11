@@ -1,0 +1,101 @@
+﻿@model IEnumerable<CRUD_LABORATORIO_DM1._0.Models.CLIENTE>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CEDULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.APELLIDO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TELEFONO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DIRECCION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.USUARIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION_SERVICIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_RECEPCION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_ENTREGA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OBSERVACIONES)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEDULA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APELLIDO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TELEFONO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIRECCION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USUARIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRIPCION_SERVICIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_RECEPCION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_ENTREGA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OBSERVACIONES)
+            </td>
+            <td>
+
+                @Html.ActionLink("Editar", "Edit", new { id = item.ID_CLIENTE }, new { onclick = "return confirm('Esta seguro de editar los datos ?');" })
+
+                @Html.ActionLink("Detalles", "Details", new { id = item.ID_CLIENTE }, new { onclick = "return confirm('Desea detalles de la información');" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_CLIENTE }, new { onclick = "return confirm('Esta seguro de eliminar los datos ?');" })
+
+                @*<a asp-action="Edit" asp-route-id="@item.ID_CLIENTE">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.ID_CLIENTE">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.ID_CLIENTE">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
